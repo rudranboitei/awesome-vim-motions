@@ -1,0 +1,193 @@
+{
+   // ============================================
+  // 🚀 VIM CONFIGURATION - Optimized for Speed
+  // ============================================
+  
+  // Core Vim Settings
+  "vim.useSystemClipboard": true,
+  "vim.showcmd": true,
+  "vim.useCtrlKeys": true,
+  "vim.useCtrlKeysInInsertMode": true,
+  "vim.enablePersistentUndo": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.scroll": 5,
+  
+  // Additional powerful settings
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.surround": true,
+  "vim.replaceWithRegister": true,
+  "vim.foldfix": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+  
+  // Cursor style
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.visualline": "block",
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.replace": "underline",
+  // Let VS Code handle these
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false
+  },
+  // Leader
+  "vim.leader": " ",
+  // Insert mode escape
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "k",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  // 🧨 Normal Mode Power Keybindings
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    // File Navigation
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "explorer.newFile"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "renameFile"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "commands": [
+        "deleteFile"
+      ]
+    },
+    // Buffer navigation
+    {
+      "before": [
+        "H"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "L"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    // Split navigation (like real Vim)
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.focusRightGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "commands": [
+        "workbench.action.focusBelowGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "workbench.action.focusAboveGroup"
+      ]
+    }
+  ],
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "go": false
+  },
+  "gitlens.home.preview.enabled": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+}
