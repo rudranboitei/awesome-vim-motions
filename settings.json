@@ -1,8 +1,7 @@
 {
-   // ============================================
+  // ============================================
   // 🚀 VIM CONFIGURATION - Optimized for Speed
   // ============================================
-  
   // Core Vim Settings
   "vim.useSystemClipboard": true,
   "vim.showcmd": true,
@@ -14,7 +13,6 @@
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.scroll": 5,
-  
   // Additional powerful settings
   "vim.easymotion": true,
   "vim.sneak": true,
@@ -25,7 +23,6 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 200,
   "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
-  
   // Cursor style
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
@@ -180,14 +177,5 @@
         "workbench.action.focusAboveGroup"
       ]
     }
-  ],
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "go": false
-  },
-  "gitlens.home.preview.enabled": false,
-  "github.copilot.nextEditSuggestions.enabled": true,
+  ]
 }

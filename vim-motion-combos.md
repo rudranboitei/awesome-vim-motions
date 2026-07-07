@@ -1,290 +1,109 @@
-# ✅ Vim Motion Combos — Developer Daily Use Only
+# ⚡ Vim Motion Pocket Reference Cheatsheet
 
-## 🚀 Move Line (Keep — very useful)
-
-```
-ddp → move line down
-ddkP → move line up
-yyp → duplicate line
-dd → delete line
-yy → copy line
-```
-
-That's enough for line management.
-
-## 🚶 Navigation (Only essentials)
-
-```
-gg → top of file
-G → bottom of file
-0 → start of line
-$ → end of line
-w → next word
-b → previous word
-Ctrl+d → half page down
-Ctrl+u → half page up
-```
-
-You don't need H M L { } etc now.
-
-## ✏️ Editing Combos (MOST IMPORTANT)
-
-These are gold.
-
-```
-ciw → rename variable
-ci" → edit prop / string
-ci( → edit function / hook
-ci[ → edit array
-ci{ → edit object
-cit → edit JSX text
-```
-
-Delete versions:
-
-```
-diw → delete word
-di" → delete string
-```
-
-That's 80% real editing.
-
-## 🧹 Line Editing (Daily)
-
-```
-cc → rewrite line
-C → rewrite till end
-D → delete till end
-o → new line below
-O → new line above
-A → insert end
-I → insert start
-```
-
-Used constantly.
-
-## 🔎 Search + Fix (Senior workflow)
-
-```
-/text → search
-n → next
-. → repeat last change
-u → undo
-Ctrl+r → redo
-```
-
-Extremely important.
-
-## 🔢 Counts (Very practical)
-
-```
-3dd → delete 3 lines
-5j → move 5 lines
-4w → move 4 words
-```
-
-Counts = speed.
-
-## 📋 Visual Mode (Basic only)
-
-```
-v → select text
-V → select line
-Ctrl+v → block select
-```
-
-Good for Tailwind editing.
+A developer-focused cheat sheet designed to be kept open on a second screen or printed. Focuses on the 20% of commands that yield 80% of the speed gains.
 
 ---
 
-# 🔥 15 Vim Combos React Devs Actually Spam
+## 🛠️ Custom VS Code Vim Configuration
 
-These are **real combos React devs spam daily** — not fancy, just practical.
+These bindings are defined in [settings.json](file:///home/rudra/Documents/awesome-vim-motions/settings.json) and optimize VS Code navigation.
 
-## 1️⃣ Move line down
-
-👉 `ddp`
-
-Fix order of JSX / imports fast.
-
----
-
-## 2️⃣ Move line up
-
-👉 `ddkP`
-
-Very common while refactoring.
-
----
-
-## 3️⃣ Duplicate line
-
-👉 `yyp`
-
-Copy component, hook, Tailwind line.
+| Shortcut | Action | VS Code Command / Description |
+| :--- | :--- | :--- |
+| `jk` or `kj` | `<Esc>` | Exit Insert mode back to Normal mode (Home Row escape) |
+| `Space` | `<leader>` | The primary custom leader key |
+| `Space + w` | Save File | `workbench.action.files.save` |
+| `Space + q` | Close Tab | `workbench.action.closeActiveEditor` |
+| `Space + f` | Fuzzy File Search | `workbench.action.quickOpen` (QuickOpen explorer) |
+| `Space + e` | Focus Explorer Tree | `workbench.view.explorer` (Open project sidebar) |
+| `Space + n` | New File | `explorer.newFile` (Create file in current directory) |
+| `Space + r` | Rename File | `renameFile` (Rename file in sidebar explorer) |
+| `Space + d` | Delete File | `deleteFile` (Send file to trash) |
+| `H` | Prev Editor Tab | `workbench.action.previousEditor` (Switch to left tab) |
+| `L` | Next Editor Tab | `workbench.action.nextEditor` (Switch to right tab) |
+| `Ctrl + h` | Focus Left Split | `workbench.action.focusLeftGroup` |
+| `Ctrl + l` | Focus Right Split | `workbench.action.focusRightGroup` |
+| `Ctrl + j` | Focus Below Split | `workbench.action.focusBelowGroup` |
+| `Ctrl + k` | Focus Above Split | `workbench.action.focusAboveGroup` |
 
 ---
 
-## 4️⃣ Rename variable
+## 🏃 1. Essential Navigation
 
-👉 `ciw`
+Move across words and documents instantly.
 
-Cursor on variable → rename instantly.
-
-Used everywhere.
-
----
-
-## 5️⃣ Edit prop value ⭐
-
-👉 `ci"`
-
-Example:
-
-```
-<Button size="lg" />
-```
-
-Change value in seconds.
+| Command | Action | Description |
+| :--- | :--- | :--- |
+| `h` / `j` / `k` / `l` | Left / Down / Up / Right | Basic character and line movements |
+| `w` | Next Word | Jump to start of the next word |
+| `b` | Previous Word | Jump back to start of the previous word |
+| `e` | End of Word | Jump to the end of the current or next word |
+| `0` | Start of Line | Jump to absolute column 0 |
+| `^` | First Text Character | Jump to the first non-whitespace character on the line |
+| `$` | End of Line | Jump to the end of the current line |
+| `gg` | Top of File | Jump to line 1 |
+| `G` | Bottom of File | Jump to the very last line of the file |
+| `Ctrl + d` | Half Page Down | Smooth scrolling down |
+| `Ctrl + u` | Half Page Up | Smooth scrolling up |
 
 ---
 
-## 6️⃣ Edit JSX children ⭐
+## ✏️ 2. Core Editing Combos
 
-👉 `cit`
+These change commands automatically delete target text and drop you in **Insert mode**, saving valuable keystrokes.
 
-```
-<div>Hello</div>
-```
-
-Change text fast.
-
-React dev spam this.
-
----
-
-## 7️⃣ Edit hook / function ⭐
-
-👉 `ci(`
-
-```
-useEffect(() => {}, [])
-```
-
-Edit callback quickly.
+| Command | Targets | Real-world React/JS Example |
+| :--- | :--- | :--- |
+| `ciw` | **Change Inner Word** | Edit a variable name at the cursor: `const my[Var] = 10` |
+| `ci"` | **Change inside Quotes** | Edit prop value or string: `className="[flex items-center]"` |
+| `ci(` | **Change inside Parentheses**| Edit function params or hooks: `useEffect(() => {}, [[count]])` |
+| `ci[` | **Change inside Brackets** | Edit array elements: `const list = [[1, 2, 3]]` |
+| `ci{` | **Change inside Braces** | Edit object body: `const config = {[theme: "dark"]}` |
+| `cit` | **Change inside JSX Tag** | Edit element text: `<div>[Hello World]</div>` |
+| `cc` | **Change Whole Line** | Rewrite current line from scratch |
+| `C` | **Change to End of Line** | Rewrite from cursor position to line end |
 
 ---
 
-## 8️⃣ Edit dependency array
+## ✂️ 3. Deleting & Copying (Yanking)
 
-👉 `ci[`
-
-Used daily with hooks.
-
----
-
-## 9️⃣ Edit object
-
-👉 `ci{`
-
-State object, props object, API response.
-
-Very common.
-
----
-
-## 🔟 Rewrite whole line
-
-👉 `cc`
-
-Faster than deleting + typing.
+| Command | Action | Description |
+| :--- | :--- | :--- |
+| `dd` | Delete Line | Cut the current line to clipboard |
+| `yy` | Yank (Copy) Line | Copy current line to clipboard |
+| `p` | Paste After | Paste clipboard content after cursor / below line |
+| `P` | Paste Before | Paste clipboard content before cursor / above line |
+| `diw` | Delete Inner Word | Delete word under cursor without entering Insert mode |
+| `di"` | Delete inside Quotes | Clear string contents |
+| `D` | Delete to End of Line | Cut cursor position to line end |
+| `ddp` | Move Line Down | Cut line and paste below (swaps line with down-neighbor) |
+| `ddkP` | Move Line Up | Cut line and paste above (swaps line with up-neighbor) |
+| `yyp` | Duplicate Line | Copy and paste the current line directly below |
 
 ---
 
-## 1️⃣1️⃣ Change till end
+## 🔎 4. Search, Select, & Repeat (Senior Workflow)
 
-👉 `C`
+The secret to massive speed is chaining navigation with the dot operator (`.`) to apply edits repeatedly.
 
-Example:
-
-```
-return slow + 1
-```
-
-Rewrite end fast.
-
----
-
-## 1️⃣2️⃣ Search + fix workflow ⭐⭐⭐
-
-👉 `/text`
-👉 `n`
-👉 `.`
-
-Rename / clean logs everywhere.
-
-Senior workflow.
+| Command / Flow | Action | Description / How to use |
+| :--- | :--- | :--- |
+| `/searchTerm` | Search Forward | Find instances of `searchTerm` in the file. Press `Enter` to confirm. |
+| `n` | Next Match | Jump to the next search occurrence |
+| `N` | Previous Match | Jump to the previous search occurrence |
+| `.` | **Repeat Last Edit** | Repeats your last change (e.g. if you did `ciw` or `dd`) |
+| `u` | Undo | Undo last change |
+| `Ctrl + r` | Redo | Redo last undone change |
+| `v` | Visual Selection | Select character-by-character |
+| `V` | Visual Line Selection| Select line-by-line (perfect for block operations) |
+| `Ctrl + v` | Visual Block Selection| Select column block (ideal for editing Tailwind class lists) |
 
 ---
 
-## 1️⃣3️⃣ Open new line fast
+## ⚡ Multi-Command Combos
 
-👉 `o` → below
-👉 `O` → above
+Use these powerful combinations for day-to-day speed coding:
 
-Used constantly while coding.
-
----
-
-## 1️⃣4️⃣ Duplicate then edit combo ⭐
-
-👉 `yyp` → `ciw`
-
-Clone variable / JSX → modify.
-
-Super common pattern.
-
----
-
-## 1️⃣5️⃣ Move fast in file
-
-👉 `gg` → top
-👉 `G` → bottom
-👉 `Ctrl+d` → scroll
-
-Huge project navigation.
-
----
-
-# 🧠 The Real React Vim Pattern
-
-While coding you repeat this:
-
-Navigate → `w b gg`
-Edit → `ciw ci" cit`
-Refactor → `.` repeat
-Reorder → `ddp`
-Hooks → `ci(`
-Search → `/text`
-
-That's it.
-
----
-
-# ⭐ If You Master These — You Look Fast
-
-Seriously these 15 = 80% Vim productivity.
-
-You don't need advanced macros yet.
-
----
-
-If you want next level, I can show:
-
-🔥 10 Vim combos Tailwind devs spam
-🔥 Vim combos for DSA problems
-🔥 Vim mistakes that slow React devs
-🔥 Real senior coding workflow
-🔥 Vim mental model (most important)
-
-Just tell me 😄
+* **Fuzzy Edit:** `/myVar` ➔ `ciw` (type new name) ➔ `Esc` ➔ `n` ➔ `.` (Repeatedly renames occurrences)
+* **Clone & Edit:** `yyp` ➔ `ciw` (Clones a line/variable and immediately starts renaming it)
+* **Clean Code:** `/console.log` ➔ `dd` ➔ `n` ➔ `.` (Rapidly purges console logs throughout the file)
